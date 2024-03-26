@@ -1,0 +1,39 @@
+*
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 10px;
+    text-align: center;
+}
+
+.gene
+{
+   margin-top: 8%;
+   margin-left: 32%;
+   padding: 15px;
+   border: 1px solid black;
+   width: 500px;
+   height: 210px;
+   border-radius: 20px;
+
+}
+h1
+{
+   border-radius: 20px;
+   border: 1px solid black;
+   padding: 12px;
+   color: white;
+   background-color: black;
+}
+input
+{
+   padding: 10px 20px;
+   border-radius: 10px;
+}
+button
+   {
+   padding: 10px 15px;
+   margin: 20px;
+   border-radius: 10px;
+   color: white;
+   background-color: black
+   }

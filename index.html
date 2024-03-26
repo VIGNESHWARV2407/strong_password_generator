@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create your Own Strong Password Generator</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <h1>Password Generator</h1>
+    <div id="gene" class="gene">
+    <label><strong>Enter the length of the password:</strong></label>
+    <br><br>
+    <input type="text" id="length" placeholder="Enter a number">
+    <br>
+    <button id="generate" onclick="gen_password()">Generate</button>
+    <button id="copy" onclick="copy_password()">Copy</button>
+    <p id="show"></p>
+</div>
+</body>
+</html>
+
+<script>
+function gen_password()
+{
+    const len = document.getElementById("length");
+    const upper="QWERTYUIOPASDFGHJKLZXCVBNM";
+    const lower="mnbvcxzlkjhgfdsapoiuytrewq";
+    const spl="!@#$%^&*()_+-=*/|<>?.,";
+    const number="0123456789"
+    const password=upper+lower+spl+number;
+    let output="";
+    for(var i=0;i<=len.value;i++)
+    {
+        var generation= Math.ceil(Math.random()* password.length);
+        output= output + password.substring(generation,generation + 1);
+    }
+    document.getElementById("length").value=output;
+    document.getElementById("show").innerHTML = ""
+
+        
+}
+function copy_password()
+{
+    var copy=document.getElementById("length");
+    copy.select();
+    copy.setSelectionRange(0,999);
+    document.execCommand("copy");
+    document.getElementById("show").innerHTML = "Password is Copied ..!!"
+
+}
+
+</script>
